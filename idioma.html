@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de País e Idioma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            position: relative;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo {
+            width: auto;
+            height: 80px;
+            display: block;
+            object-fit: contain;
+            margin: 10px 50px;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            margin-left: 60px;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 30px;
+        }
+
+        .select-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 4px;
+        }
+
+        select {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background-color: #BFBFBF;
+            color: #000000;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        select:hover {
+            background-color: #CCCCCC;
+            border-color: #FFA500;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #FF6B00;
+            background-color: #FFFFFF;
+        }
+
+        select option {
+            background-color: #FFFFFF;
+            color: #000000;
+            padding: 10px;
+        }
+
+        .btn-siguiente {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #FFA500, #FF6B00);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-siguiente:hover {
+            background: linear-gradient(135deg, #FF8C00, #FF4500);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
+        }
+
+        .btn-siguiente:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(255, 165, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                height: 80px;
+            }
+
+            .form-container {
+                width: 90%;
+            }
+
+            .logo-text {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 50px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .logo {
+                height: 100px;
+            }
+            .header {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="./images/Recurso 3.png" alt="Logo" class="logo">
+        </div>
+        <p class="logo-text">NO EXCUSES</p>
+    </div>
+
+    <div class="form-container">
+        <div class="select-group">
+            <label for="pais" class="form-label">País</label>
+            <select name="pais" id="pais">
+                <option value="" disabled selected>Selecciona tu país</option>
+                <option value="es">España</option>
+                <option value="mx">México</option>
+            </select>
+        </div>
+
+        <div class="select-group">
+            <label for="idioma" class="form-label">Idioma</label>
+            <select name="idioma" id="idioma">
+                <option value="" disabled selected>Selecciona tu idioma</option>
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <a href="login.html" class="btn-siguiente">Siguiente</a>
+    </div>
+</body>
+</html>
